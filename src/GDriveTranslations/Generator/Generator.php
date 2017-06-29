@@ -26,7 +26,7 @@ class Generator
 
     public function generateCsv($fileHandle, string $locale)
     {
-        $translationMessages = $this->translator->getCatalogue()->all('messages');
+        $translationMessages = $this->translator->getCatalogue($locale)->all('messages');
 
         $levels = $this->calculateLevels($translationMessages);
 
