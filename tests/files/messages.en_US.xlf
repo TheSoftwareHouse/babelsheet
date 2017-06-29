@@ -1,0 +1,71 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file datatype="plaintext" source-language="en" original="file.ext">
+    <body>
+      <trans-unit id="CORE.LABELS.YES">
+        <source>CORE.LABELS.YES</source>
+        <target>yes</target>
+      </trans-unit>
+      <trans-unit id="CORE.LABELS.NO">
+        <source>CORE.LABELS.NO</source>
+        <target>no</target>
+      </trans-unit>
+      <trans-unit id="CORE.LABELS.SAVE">
+        <source>CORE.LABELS.SAVE</source>
+        <target>save</target>
+      </trans-unit>
+      <trans-unit id="CORE.LABELS.CANCEL">
+        <source>CORE.LABELS.CANCEL</source>
+        <target>cancel</target>
+      </trans-unit>
+      <trans-unit id="COMMON.STH1">
+        <source>COMMON.STH1</source>
+        <target>Some message ...</target>
+      </trans-unit>
+      <trans-unit id="COMMON.FORM.COMMENT">
+        <source>COMMON.FORM.COMMENT</source>
+        <target>comment</target>
+      </trans-unit>
+      <trans-unit id="FRONT.HEADER.TITLE">
+        <source>FRONT.HEADER.TITLE</source>
+        <target>My Cool App</target>
+      </trans-unit>
+      <trans-unit id="FRONT.HEADER.CATCH_PHRASE">
+        <source>FRONT.HEADER.CATCH_PHRASE</source>
+        <target>Join us!</target>
+      </trans-unit>
+      <trans-unit id="FRONT.PAGINATION.FIRST">
+        <source>FRONT.PAGINATION.FIRST</source>
+        <target>First page</target>
+      </trans-unit>
+      <trans-unit id="FRONT.PAGINATION.NEXT">
+        <source>FRONT.PAGINATION.NEXT</source>
+        <target>Next page</target>
+      </trans-unit>
+      <trans-unit id="FRONT.PAGINATION.PREV">
+        <source>FRONT.PAGINATION.PREV</source>
+        <target>Prev page</target>
+      </trans-unit>
+      <trans-unit id="FRONT.PAGINATION.LAST">
+        <source>FRONT.PAGINATION.LAST</source>
+        <target>Last page</target>
+      </trans-unit>
+      <trans-unit id="BACK.MAILS.REGISTER.SUBJECT">
+        <source>BACK.MAILS.REGISTER.SUBJECT</source>
+        <target>You have been registered</target>
+      </trans-unit>
+      <trans-unit id="BACK.MAILS.REGISTER.GREETING">
+        <source>BACK.MAILS.REGISTER.GREETING</source>
+        <target>Hi %name%</target>
+      </trans-unit>
+      <trans-unit id="BACK.MAILS.REGISTER.LINE1">
+        <source>BACK.MAILS.REGISTER.LINE1</source>
+        <target>Thank you for signing up with us.</target>
+      </trans-unit>
+      <trans-unit id="BACK.MAILS.REGISTER.FOOTER">
+        <source>BACK.MAILS.REGISTER.FOOTER</source>
+        <target>The App Team</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
