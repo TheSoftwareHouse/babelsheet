@@ -64,7 +64,7 @@ if (file_exists($configFilename)) {
     if(!$line) {
         exit('Cancelled'."\n\n");
     }
-    $sheetFile = $downloader->create($line);
+    $sheetFile = $downloader->createFromExample($line);
 
     $config = new Config($sheetFile->id, Config::ACCESS_FILE);
 
