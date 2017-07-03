@@ -31,8 +31,10 @@ $application->getDefinition()->addOption(new InputOption(
     DEFAULT_WORK_DIR
 ));
 
-$application
-    ->add(new \GDriveTranslations\Command\ConvertCommand($downloader))
-;
+$application->addCommands([
+    new \GDriveTranslations\Command\ConvertCommand($downloader),
+    new \GDriveTranslations\Command\InitializeCommand($downloader),
+    new \GDriveTranslations\Command\TranslateCommand($downloader),
+]);
 
 $application->run();

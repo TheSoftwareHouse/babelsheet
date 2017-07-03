@@ -15,4 +15,4 @@ ADD build-secret.sh /
 RUN chmod 755 /build-secret.sh
 ENTRYPOINT ["/build-secret.sh"]
 
-CMD [ "php", "./translate.php" ]
+CMD [ "php", "./application.php", "translate" ]
