@@ -41,6 +41,11 @@ class Reader
             $config->accessType = $raw->accessType;
         }
 
+        $config->sheetName = 'production';
+        if (isset($raw->sheetName)) {
+            $config->sheetName = $raw->sheetName;
+        }
+
         foreach ($raw->targets as $target) {
             $config->targets[] = Target::forgeFromRaw($target);
         }

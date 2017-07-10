@@ -3,7 +3,9 @@
 namespace GDriveTranslations;
 
 use GDriveTranslations\Config\Config;
+use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\Psr7\Response;
+use Psr\Http\Message\ResponseInterface;
 
 class GDriveDownloader
 {
@@ -12,17 +14,47 @@ class GDriveDownloader
      */
     private $drive;
 
-    public function __construct(\Google_Service_Drive $drive)
+    /**
+     * @var \Google_Service_Sheets
+     */
+    private $sheets;
+
+    public function __construct(\Google_Client $client)
     {
-        $this->drive = $drive;
+        $this->drive = new \Google_Service_Drive($client);
+        $this->sheets = new \Google_Service_Sheets($client);
     }
 
     public function download(Config $config)
     {
         /* @var Response $response */
         try {
-            $response = $this->drive->files->export($config->fileId, 'text/csv', ['alt' => 'media']);
-            $content = $response->getBody()->getContents();
+
+            $spreadsheet = $this->sheets->spreadsheets->get($config->fileId, ['includeGridData' => false]);
+
+            $gid = '0';
+
+            /** @var \Google_Service_Sheets_Sheet $sheet */
+            foreach ($spreadsheet->getSheets() as $sheet) {
+                if ($sheet->getProperties()->getTitle() === $config->sheetName) {
+                    $gid = $sheet->getProperties()->getSheetId();
+                }
+            }
+
+            $request = new Request(
+                'GET',
+                sprintf(
+                    'https://docs.google.com/spreadsheets/d/%s/export?exportFormat=%s&gid=%s',
+                    $config->fileId,
+                    'csv',
+                    $gid
+                )
+            );
+
+            /** @var ResponseInterface $response */
+            $response = $this->drive->getClient()->execute($request);
+
+            $content = (string) $response->getBody();
         } catch (\Exception $e) {
             exit('Could not download the spreadsheet: '.$e->getMessage());
         }

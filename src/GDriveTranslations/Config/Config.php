@@ -13,6 +13,8 @@ class Config
     public $targets;
     /** @var string */
     public $accessType;
+    /** @var string */
+    public $sheetName;
 
     public function __construct($fileId, $accessType = self::ACCESS_DRIVE)
     {

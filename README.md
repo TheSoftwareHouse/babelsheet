@@ -28,6 +28,7 @@ In the `\lang` directory of your project put a json file named `translate.json`.
 ```
 {
   "fileId": "1AUAKxhuZyjYl4NdpQCLBcSZe2snKAOjcXArlHRIn_hM",
+  "sheetName": "Sheet1",
   "accessType": "drive"
   "targets": [
     {
@@ -46,6 +47,11 @@ In the `\lang` directory of your project put a json file named `translate.json`.
   ]
 }
 ```
+
+**fileId** is unique id of spreadsheet with translations
+
+**sheetName** is optional name of sheet from which translations should be read. Default value is `production`.
+If sheet with given name won't be found the first sheet will be used.
 
 **accessType** is the type of permission tool will ask you to grant. `drive` is the permission to all files in a drive, 
 `file` is the permissions only to files created by the tool (see `permissions`). Property is optional and defaults 
@@ -80,9 +86,13 @@ target on the single key basis instead of section basis. Tags are defined for ev
  
 The result files will be placed in the same directory as the `translate.json` configuration file. 
 
-### running the containter
+### running the container
 
-`docker run -ti --rm -v <<lang directory>>:/lang tsurowiec/translations_from_gdrive`
+Create Project in Google APIs Developer Console with GDrive and GSheets access, then download `client_secret.json` file.
+
+`docker run -ti --rm -v -e SECRET=$(cat client_secret.json) <<lang directory>>:/lang tsurowiec/translations_from_gdrive`
+
+Where `client_secret.json` is path to your downloaded file with application id and secret
 
 The parser will ask you to go to the authorization link and paste the access code. Then the access token will be 
 saved in the `lang directory`.

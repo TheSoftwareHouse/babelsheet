@@ -4,7 +4,7 @@ namespace GDriveTranslations;
 
 use GDriveTranslations\Config\Config;
 
-class GDrive
+class GClientFactory
 {
     const ACCESS_TOKEN = 'GDRIVE_ACCESS_TOKEN';
     const REFRESH_TOKEN = 'GDRIVE_REFRESH_TOKEN';
@@ -25,9 +25,9 @@ class GDrive
      *
      * @param string $scope
      *
-     * @return \Google_Service_Drive
+     * @return \Google_Client
      */
-    public function getService($scope)
+    public function createClient($scope)
     {
         $scopes = [];
         $client = new \Google_Client();
@@ -80,7 +80,7 @@ class GDrive
             file_put_contents($credentialsPath, json_encode($token));
         }
 
-        return new \Google_Service_Drive($client);
+        return $client;
     }
 
     /**

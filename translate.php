@@ -29,8 +29,8 @@ const CONFIG_DIR = '/lang';
 $configFilename = CONFIG_DIR . '/translate.json';
 $credentialsFile = CONFIG_DIR . '/translate_token.json';
 
-$GDriveServiceFactory = new \GDriveTranslations\GDrive($credentialsFile);
-$downloader = new GDriveDownloader($GDriveServiceFactory->getService(Config::ACCESS_DRIVE));
+$GDriveServiceFactory = new \GDriveTranslations\GClientFactory($credentialsFile);
+$downloader = new GDriveDownloader($GDriveServiceFactory->createClient(Config::ACCESS_DRIVE));
 
 if (file_exists($configFilename)) {
 
