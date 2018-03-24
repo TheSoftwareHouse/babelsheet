@@ -1,2 +1,6 @@
 .git
 client_secret.json
+bin
+tests
+.travis.yml
+phpunit.xml
