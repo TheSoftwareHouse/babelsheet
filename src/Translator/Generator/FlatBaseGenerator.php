@@ -1,8 +1,8 @@
 <?php
 
-namespace GDriveTranslations\Translator\Generator;
+namespace BabelSheet\Translator\Generator;
 
-use GDriveTranslations\Source\TranslationData;
+use BabelSheet\Source\TranslationData;
 
 abstract class FlatBaseGenerator extends BaseGenerator
 {

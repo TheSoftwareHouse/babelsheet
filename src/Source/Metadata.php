@@ -1,6 +1,6 @@
 <?php
 
-namespace GDriveTranslations\Source;
+namespace BabelSheet\Source;
 
 class Metadata
 {

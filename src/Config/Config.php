@@ -1,6 +1,6 @@
 <?php
 
-namespace GDriveTranslations\Config;
+namespace BabelSheet\Config;
 
 class Config
 {

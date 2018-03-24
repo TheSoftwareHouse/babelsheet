@@ -1,6 +1,6 @@
 <?php
 
-namespace GDriveTranslations\Utils;
+namespace BabelSheet\Utils;
 
 class Assert
 {

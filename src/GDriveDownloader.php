@@ -1,8 +1,8 @@
 <?php
 
-namespace GDriveTranslations;
+namespace BabelSheet;
 
-use GDriveTranslations\Config\Config;
+use BabelSheet\Config\Config;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\Psr7\Response;
 use Psr\Http\Message\ResponseInterface;

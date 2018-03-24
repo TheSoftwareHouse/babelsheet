@@ -1,6 +1,6 @@
 <?php
 
-use GDriveTranslations\Source\TranslationDataLoader;
+use BabelSheet\Source\TranslationDataLoader;
 use PHPUnit\Framework\TestCase;
 
 class TranslationDataLoaderTest extends TestCase

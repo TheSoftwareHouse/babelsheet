@@ -1,8 +1,8 @@
 <?php
 
-namespace GDriveTranslations\Config;
+namespace BabelSheet\Config;
 
-use GDriveTranslations\Utils\Assert;
+use BabelSheet\Utils\Assert;
 
 class Reader
 {

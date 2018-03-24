@@ -1,6 +1,6 @@
 <?php
 
-namespace GDriveTranslations\Translator\Generator;
+namespace BabelSheet\Translator\Generator;
 
 abstract class BaseGenerator
 {

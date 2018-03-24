@@ -2,23 +2,23 @@
 
 $downloadTime = -microtime(true);
 
-use GDriveTranslations\Config\Config;
-use GDriveTranslations\Config\Reader;
-use GDriveTranslations\Config\Writer;
-use GDriveTranslations\GDriveDownloader;
-use GDriveTranslations\Source\TranslationDataLoader;
-use GDriveTranslations\Translator\Translator;
-use GDriveTranslations\Translator\Generator\AndroidGenerator;
-use GDriveTranslations\Translator\Generator\iOSGenerator;
-use GDriveTranslations\Translator\Generator\JsonGenerator;
-use GDriveTranslations\Translator\Generator\XlfGenerator;
+use BabelSheet\Config\Config;
+use BabelSheet\Config\Reader;
+use BabelSheet\Config\Writer;
+use BabelSheet\GDriveDownloader;
+use BabelSheet\Source\TranslationDataLoader;
+use BabelSheet\Translator\Translator;
+use BabelSheet\Translator\Generator\AndroidGenerator;
+use BabelSheet\Translator\Generator\iOSGenerator;
+use BabelSheet\Translator\Generator\JsonGenerator;
+use BabelSheet\Translator\Generator\XlfGenerator;
 
 require_once __DIR__.'/vendor/autoload.php';
 
 //error_reporting(0);
 date_default_timezone_set('Europe/Warsaw');
 
-echo "\nTranslations from GDrive\n========================\n\n";
+echo "\nBabelSheet Translations\n========================\n\n";
 
 if (php_sapi_name() != 'cli') {
     exit('This application must be run on the command line.');
@@ -29,7 +29,7 @@ const CONFIG_DIR = '/lang';
 $configFilename = CONFIG_DIR . '/translate.json';
 $credentialsFile = CONFIG_DIR . '/translate_token.json';
 
-$GDriveServiceFactory = new \GDriveTranslations\GClientFactory($credentialsFile);
+$GDriveServiceFactory = new \BabelSheet\GClientFactory($credentialsFile);
 $downloader = new GDriveDownloader($GDriveServiceFactory->createClient(Config::ACCESS_DRIVE));
 
 if (file_exists($configFilename)) {

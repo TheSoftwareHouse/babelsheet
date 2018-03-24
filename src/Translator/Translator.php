@@ -1,11 +1,11 @@
 <?php
 
-namespace GDriveTranslations\Translator;
+namespace BabelSheet\Translator;
 
-use GDriveTranslations\Config\Config;
-use GDriveTranslations\Config\Target;
-use GDriveTranslations\Source\TranslationData;
-use GDriveTranslations\Translator\Generator\GeneratorInterface;
+use BabelSheet\Config\Config;
+use BabelSheet\Config\Target;
+use BabelSheet\Source\TranslationData;
+use BabelSheet\Translator\Generator\GeneratorInterface;
 
 class Translator
 {

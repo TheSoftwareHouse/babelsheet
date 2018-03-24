@@ -1,9 +1,9 @@
 <?php
 
-namespace GDriveTranslations\Translator\Generator;
+namespace BabelSheet\Translator\Generator;
 
-use GDriveTranslations\Config\Target;
-use GDriveTranslations\Source\TranslationData;
+use BabelSheet\Config\Target;
+use BabelSheet\Source\TranslationData;
 
 class JsonGenerator extends WalkGenerator implements GeneratorInterface
 {

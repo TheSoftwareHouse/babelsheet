@@ -1,8 +1,8 @@
 <?php
 
-namespace GDriveTranslations;
+namespace BabelSheet;
 
-use GDriveTranslations\Config\Config;
+use BabelSheet\Config\Config;
 
 class GClientFactory
 {

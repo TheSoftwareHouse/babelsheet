@@ -6,10 +6,10 @@
  * Time: 14:42.
  */
 
-namespace GDriveTranslations\Translator\Generator;
+namespace BabelSheet\Translator\Generator;
 
-use GDriveTranslations\Config\Target;
-use GDriveTranslations\Source\TranslationData;
+use BabelSheet\Config\Target;
+use BabelSheet\Source\TranslationData;
 
 interface GeneratorInterface
 {
