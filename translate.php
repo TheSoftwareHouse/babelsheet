@@ -7,6 +7,7 @@ use GDriveTranslations\Config\Reader;
 use GDriveTranslations\Config\Writer;
 use GDriveTranslations\GDriveDownloader;
 use GDriveTranslations\Source\TranslationDataLoader;
+use GDriveTranslations\Translator\Generator\FlatJsonGenerator;
 use GDriveTranslations\Translator\Translator;
 use GDriveTranslations\Translator\Generator\AndroidGenerator;
 use GDriveTranslations\Translator\Generator\iOSGenerator;
@@ -54,6 +55,7 @@ if (file_exists($configFilename)) {
         ->addGenerator(new XlfGenerator(CONFIG_DIR))
         ->addGenerator(new iOSGenerator(CONFIG_DIR))
         ->addGenerator(new AndroidGenerator(CONFIG_DIR))
+        ->addGenerator(new FlatJsonGenerator(CONFIG_DIR))
         ->generate($data, $config);
 
     $parseTime += microtime(true);
