@@ -62,7 +62,7 @@ class GDriveDownloader
         return $content;
     }
 
-    public function create($filename)
+    public function createFromExample(string $filename)
     {
         $copiedFile = new \Google_Service_Drive_DriveFile();
         $copiedFile->setName($filename);
@@ -74,5 +74,24 @@ class GDriveDownloader
         } catch (\Exception $e) {
             exit('Could not create spreadsheet: '.$e->getMessage());
         }
+    }
+
+    public function createFromCsv(string $filename, $fileHandle): \Google_Service_Drive_DriveFile
+    {
+        $fileMetadata = new \Google_Service_Drive_DriveFile([
+            'name' => $filename,
+            'mimeType' => 'application/vnd.google-apps.spreadsheet'
+        ]);
+
+        $file = $this->drive->files->create(
+            $fileMetadata,
+            [
+                'data' => stream_get_contents($fileHandle),
+                'mimeType' => 'text/csv',
+                'uploadType' => 'multipart'
+            ]
+        );
+
+        return $file;
     }
 }
